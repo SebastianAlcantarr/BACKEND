@@ -19,18 +19,6 @@ app.add_middleware(
 
 @app.post("/analizar", response_model=RespuestaInversion)
 async def analizar(params: InversionParametros):
-    if not params.sector or not params.sector.strip():
-        raise HTTPException(
-            status_code=422,
-            detail="El sector es obligatorio"
-        )
-
-    if params.presupuesto_min > params.presupuesto_max:
-        raise HTTPException(
-            status_code=422,
-            detail="presupuesto_min no puede ser mayor que presupuesto_max"
-        )
-
     try:
         resultado = analizar_oportunidades(params)
         return resultado

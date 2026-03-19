@@ -16,6 +16,7 @@ app.add_middleware(
 )
 
 
+
 @app.post("/analizar", response_model=RespuestaInversion)
 async def analizar(params: InversionParametros):
     if not params.sector or not params.sector.strip():

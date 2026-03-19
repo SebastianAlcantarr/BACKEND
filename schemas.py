@@ -1,6 +1,8 @@
 from pydantic import BaseModel
 from typing import Optional
 
+
+
 class InversionParametros(BaseModel):
     sector: str
     presupuesto_min: float

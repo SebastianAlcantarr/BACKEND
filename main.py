@@ -6,6 +6,7 @@ import uvicorn
 
 app = FastAPI(title="Inversor Hermosillo API")
 
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],

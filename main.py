@@ -1,7 +1,7 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from schemas import InversionParametros,RespuestaInversion
-from BACKEND.groc import analizar_oportunidades
+from BACKEND.groc import analizar_oportunidades  # si la carpeta se llama 'backend' en minúsculas
 import uvicorn
 
 app = FastAPI(title="Inversor Hermosillo API")

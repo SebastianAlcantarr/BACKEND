@@ -4,9 +4,7 @@ from schemas import InversionParametros,RespuestaInversion
 from BACKEND.groc import analizar_oportunidades
 import uvicorn
 
-
 app = FastAPI(title="Inversor Hermosillo API")
-
 
 app.add_middleware(
     CORSMiddleware,

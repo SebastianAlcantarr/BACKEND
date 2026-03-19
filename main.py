@@ -1,7 +1,7 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from schemas import InversionParametros,RespuestaInversion
-from BACKEND.groc import analizar_oportunidades  # si la carpeta se llama 'backend' en minúsculas
+from groc import analizar_oportunidades  # si la carpeta se llama 'backend' en minúsculas
 import uvicorn
 
 app = FastAPI(title="Inversor Hermosillo API")
@@ -40,9 +40,3 @@ async def analizar(params: InversionParametros):
 @app.get("/")
 def root():
     return {"status": "ok", "mensaje": "API activa"}
-
-
-if __name__ == "__main__":
-    port = int(os.getenv("PORT", 8000))
-    reload = os.getenv("ENVIRONMENT") != "production"
-    uvicorn.run("main:app", host="0.0.0.0", port=port, reload=reload)
